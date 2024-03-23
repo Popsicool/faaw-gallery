@@ -8,56 +8,33 @@ import { camera, renderer } from "./setup";
 const showPaintings = () => {
     Promise.all(paintings).then(() => {
         const controls = new PointerLockControls(camera, renderer.domElement);
-        const onKeyDown = (event) => {
+        const onKeyDown = (event, b) => {
           const prevPosition = camera.position.clone(); // Store previous position for collision check
           const moveSpeed = 0.1;
-          switch (event.code) {
-            case "ArrowUp":
-            case "KeyW":
-              controls.moveForward(moveSpeed);
-              break;
-            case "ArrowDown":
-            case "KeyS":
-              controls.moveForward(-moveSpeed);
-              break;
-            case "ArrowLeft":
-            case "KeyA":
-              controls.moveRight(-moveSpeed);
-              break;
-            case "ArrowRight":
-            case "KeyD":
-              controls.moveRight(moveSpeed);
-              break;
-            case "Escape":
-            //   controls.dispose();
-              controls.unlock()
-            //   document.removeEventListener("keydown", onKeyDown);
-              showMenu()
-              break;
-            default:
-              break;
+          if (event.code === "ArrowUp" || event.code === "KeyW" || b === "1"){
+            controls.moveForward(moveSpeed);
           }
-      
-          // const checkCollision = () => {
-          //   const playerBoundingBox = new THREE.Box3();
-          //   const cameraWorldPosition = new THREE.Vector3();
-          //   camera.getWorldPosition(cameraWorldPosition);
-          //   playerBoundingBox.setFromCenterAndSize(
-          //     cameraWorldPosition,
-          //     new THREE.Vector3(1, 1, 1)
-          //   );
-          //   for (let i = 0; i < wallGroup.children.length; i++) {
-          //     if (
-          //       wallGroup.children[i].material.map !== undefined &&
-          //       playerBoundingBox.intersectsBox(wallGroup.children[i].Bbox)
-          //     ) {
-          //       return true;
-          //     }
-          //   }
-          //   return false;
-          // };
+          else if (event.code === "ArrowDown" || event.code === "KeyS" || b === "3"){
+            controls.moveForward(-moveSpeed);
+          }
+          else if (event.code === "ArrowLeft" || event.code === "KeyA" || b === "4"){
+            controls.moveRight(-moveSpeed);
+          }
+          else if (event.code === "ArrowRight" || event.code === "KeyD" || b === "2"){
+            controls.moveRight(moveSpeed);
+          }
+          else if (event.code === "Escape" || b === "8"){
+            controls.unlock()
+            showMenu()
+          }
           const checkCollision = () => {
-            const distanceThreshold = 10
+            let distanceThreshold
+            if (window.innerWidth < 600) {
+              distanceThreshold = 5
+            }
+            else{
+              distanceThreshold = 10
+            }
             const playerBoundingBox = new THREE.Box3();
             const cameraWorldPosition = new THREE.Vector3();
             camera.getWorldPosition(cameraWorldPosition);
@@ -84,6 +61,10 @@ const showPaintings = () => {
         };
       
         document.addEventListener("keydown", onKeyDown);
+        document.getElementById("up").addEventListener("mousedown", (e) => onKeyDown(e, "1"));
+        document.getElementById("down").addEventListener("mousedown", (e) => onKeyDown(e, "3"));
+        document.getElementById("left").addEventListener("mousedown", (e) => onKeyDown(e, "4"));
+        document.getElementById("right").addEventListener("mousedown", (e) => onKeyDown(e, "2"));
       
         window.addEventListener("resize", () => {
           camera.aspect = window.innerWidth / window.innerHeight;
@@ -122,9 +103,10 @@ const showPaintings = () => {
           const menu = document.getElementById("main-wrap");
           menu.style.display = "block";
         };
-        // const playBtn = document.getElementById("enter");
-        // playBtn.addEventListener("click", startExperience, false);
+        const playBtn = document.getElementById("enter");
+        playBtn.addEventListener("click", startExperience, false);
       });
 }
 
 export {showPaintings}
+

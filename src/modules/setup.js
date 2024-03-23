@@ -7,7 +7,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.z = screenWidth < 600 ? 10 : 33;
+camera.position.z = screenWidth < 600 ? 15 : 33;
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
