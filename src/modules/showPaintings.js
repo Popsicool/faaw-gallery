@@ -103,7 +103,9 @@ const showPaintings = () => {
         });
         const startExperience = (event) => {
           //* lock the pointer
-          controls.lock();
+          if (window.innerWidth > 600){
+            controls.lock();
+          }
           // camera.position.z = 18
           //* Hide Menu
           hideMenu();
@@ -133,7 +135,7 @@ const showPaintings = () => {
           const menu = document.getElementById("main-wrap");
           menu.style.display = "block";
         };
-        // const playBtn = document.getElementById("enter");
+        const playBtn = document.getElementById("enter");
         // playBtn.addEventListener("click", startExperience, false);
       });
 }
