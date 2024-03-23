@@ -103,8 +103,8 @@ const showPaintings = () => {
           const menu = document.getElementById("main-wrap");
           menu.style.display = "block";
         };
-        const playBtn = document.getElementById("enter");
-        playBtn.addEventListener("click", startExperience, false);
+        // const playBtn = document.getElementById("enter");
+        // playBtn.addEventListener("click", startExperience, false);
       });
 }
 
