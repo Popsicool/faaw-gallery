@@ -59,12 +59,42 @@ const showPaintings = () => {
             camera.position.copy(prevPosition); // Revert to previous position if collision occurs
           }
         };
-      
+        let intervalId; // Variable to store the interval ID
+
+        // Function to handle the keydown event
+        
+        // Function to handle mousedown event
+        function handleMouseDown(event, key) {
+            // Trigger the action immediately
+            onKeyDown(event,key);
+            // Start repeating the action every 100 milliseconds
+            intervalId = setInterval(() => {
+                onKeyDown(event, key);
+            }, 100);
+        }
+        
+        // Function to handle mouseup event
+        function handleMouseUp() {
+            // Stop repeating the action
+            clearInterval(intervalId);
+        }
         document.addEventListener("keydown", onKeyDown);
-        document.getElementById("up").addEventListener("mousedown", (e) => onKeyDown(e, "1"));
-        document.getElementById("down").addEventListener("mousedown", (e) => onKeyDown(e, "3"));
-        document.getElementById("left").addEventListener("mousedown", (e) => onKeyDown(e, "4"));
-        document.getElementById("right").addEventListener("mousedown", (e) => onKeyDown(e, "2"));
+        document.getElementById("up").addEventListener("mousedown", (e) => handleMouseDown(e, "1"));
+        document.getElementById("up").addEventListener("touchstart", (e) => handleMouseDown(e, "1"));
+        document.getElementById("up").addEventListener("mouseup", handleMouseUp);
+        document.getElementById("up").addEventListener("touchend", handleMouseUp);
+        document.getElementById("down").addEventListener("mousedown", (e) => handleMouseDown(e, "3"));
+        document.getElementById("down").addEventListener("touchstart", (e) => handleMouseDown(e, "3"));
+        document.getElementById("down").addEventListener("mouseup", handleMouseUp);
+        document.getElementById("down").addEventListener("touchend", handleMouseUp);
+        document.getElementById("right").addEventListener("mousedown", (e) => handleMouseDown(e, "2"));
+        document.getElementById("right").addEventListener("touchstart", (e) => handleMouseDown(e, "2"));
+        document.getElementById("right").addEventListener("mouseup", handleMouseUp);
+        document.getElementById("right").addEventListener("touchend", handleMouseUp);
+        document.getElementById("left").addEventListener("mousedown", (e) => handleMouseDown(e, "4"));
+        document.getElementById("left").addEventListener("touchstart", (e) => handleMouseDown(e, "4"));
+        document.getElementById("left").addEventListener("mouseup", handleMouseUp);
+        document.getElementById("left").addEventListener("touchend", handleMouseUp);
       
         window.addEventListener("resize", () => {
           camera.aspect = window.innerWidth / window.innerHeight;
