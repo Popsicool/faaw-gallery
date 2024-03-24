@@ -28,7 +28,7 @@ const createPainting = (imageUrl, width, height, position) => {
 
 const paintings = [];
 
-createPainting(ope, 3, 3, new THREE.Vector3(-24.8, 0, 5)).then((mesh) => {
+createPainting(ope, screenWidth < 600 ? 2 : 3, screenWidth < 600 ? 2 : 3, new THREE.Vector3(-24.8, 0, 5)).then((mesh) => {
   mesh.rotation.y = Math.PI / 2;
   mesh.geometry.computeBoundingBox();
   mesh.Bbox = new THREE.Box3().setFromObject(mesh);
@@ -44,7 +44,7 @@ createPainting(ope, 3, 3, new THREE.Vector3(-24.8, 0, 5)).then((mesh) => {
     },
   });
 });
-createPainting(ope, 3, 3,screenWidth < 600 ? new THREE.Vector3(-9.8, 0, 15) : new THREE.Vector3(-24.8, -3, -20)).then((mesh) => {
+createPainting(ope, screenWidth < 600 ? 2 : 3, screenWidth < 600 ? 2 : 3,screenWidth < 600 ? new THREE.Vector3(-9.8, 0, 15) : new THREE.Vector3(-24.8, -3, -20)).then((mesh) => {
   mesh.rotation.y = Math.PI / 2;
   mesh.geometry.computeBoundingBox();
   mesh.Bbox = new THREE.Box3().setFromObject(mesh);
@@ -62,7 +62,7 @@ createPainting(ope, 3, 3,screenWidth < 600 ? new THREE.Vector3(-9.8, 0, 15) : ne
     },
   });
 });
-createPainting(ope, 3, 3,screenWidth < 600 ? new THREE.Vector3(-9.8, 0, 10) : new THREE.Vector3(-24.8, -3, -20)).then((mesh) => {
+createPainting(ope, screenWidth < 600 ? 2 : 3, screenWidth < 600 ? 2 : 3,screenWidth < 600 ? new THREE.Vector3(-9.8, 0, 10) : new THREE.Vector3(-24.8, -3, -20)).then((mesh) => {
   mesh.rotation.y = Math.PI / 2;
   mesh.geometry.computeBoundingBox();
   mesh.Bbox = new THREE.Box3().setFromObject(mesh);
@@ -76,7 +76,7 @@ createPainting(ope, 3, 3,screenWidth < 600 ? new THREE.Vector3(-9.8, 0, 10) : ne
     },
   });
 });
-createPainting(ope, 3, 3, screenWidth < 600 ? new THREE.Vector3(-9.8, 0, -15) : new THREE.Vector3(-24.8, 3, -10)).then((mesh) => {
+createPainting(ope, screenWidth < 600 ? 2 : 3, screenWidth < 600 ? 2 : 3, screenWidth < 600 ? new THREE.Vector3(-9.8, 0, -15) : new THREE.Vector3(-24.8, 3, -10)).then((mesh) => {
   mesh.rotation.y = Math.PI / 2;
   mesh.geometry.computeBoundingBox();
   mesh.Bbox = new THREE.Box3().setFromObject(mesh);
@@ -91,7 +91,7 @@ createPainting(ope, 3, 3, screenWidth < 600 ? new THREE.Vector3(-9.8, 0, -15) : 
   });
 });
 
-createPainting(ope, 3, 3,screenWidth < 600 ? new THREE.Vector3(-9.8, 0, -3) : new THREE.Vector3(-24.8, 3, -3)).then((mesh) => {
+createPainting(ope, screenWidth < 600 ? 2 : 3, screenWidth < 600 ? 2 : 3,screenWidth < 600 ? new THREE.Vector3(-9.8, 0, -3) : new THREE.Vector3(-24.8, 3, -3)).then((mesh) => {
   mesh.rotation.y = Math.PI / 2;
   mesh.geometry.computeBoundingBox();
   mesh.Bbox = new THREE.Box3().setFromObject(mesh);
@@ -105,7 +105,7 @@ createPainting(ope, 3, 3,screenWidth < 600 ? new THREE.Vector3(-9.8, 0, -3) : ne
   });
 });
 
-createPainting(tecno, 3, 3, screenWidth < 600 ? new THREE.Vector3(9.8, 0, -15) : new THREE.Vector3(24.8, 0, -10)).then((mesh) => {
+createPainting(tecno, screenWidth < 600 ? 2 : 3, screenWidth < 600 ? 2 : 3, screenWidth < 600 ? new THREE.Vector3(9.8, 0, -15) : new THREE.Vector3(24.8, 0, -10)).then((mesh) => {
   mesh.rotation.y = -Math.PI / 2;
   mesh.geometry.computeBoundingBox();
   mesh.Bbox = new THREE.Box3().setFromObject(mesh);
@@ -121,7 +121,7 @@ createPainting(tecno, 3, 3, screenWidth < 600 ? new THREE.Vector3(9.8, 0, -15) :
 });
 
 //? create banners
-createPainting(ariyike, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, screenWidth < 600 ? new THREE.Vector3(-9.8, 3, 12) : new THREE.Vector3(-24.8, 9, 7.5)).then(
+createPainting(ariyike, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, screenWidth < 600 ? new THREE.Vector3(-9.8, 4.5, 12) : new THREE.Vector3(-24.8, 9, 7.5)).then(
   (mesh) => {
     mesh.rotation.y = Math.PI / 2;
     mesh.geometry.computeBoundingBox();
@@ -129,7 +129,7 @@ createPainting(ariyike, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, s
     wallGroup.add(mesh);
   }
 );
-createPainting(ariyike, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, screenWidth < 600 ? new THREE.Vector3(-9.8, 3, 0) : new THREE.Vector3(-24.8, 9, -7.5)).then(
+createPainting(ariyike, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, screenWidth < 600 ? new THREE.Vector3(-9.8, 4.5, 0) : new THREE.Vector3(-24.8, 9, -7.5)).then(
   (mesh) => {
     mesh.rotation.y = Math.PI / 2;
     mesh.geometry.computeBoundingBox();
@@ -137,7 +137,7 @@ createPainting(ariyike, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, s
     wallGroup.add(mesh);
   }
 );
-createPainting(ariyike, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, screenWidth < 600 ? new THREE.Vector3(-9.8, 3, -15) : new THREE.Vector3(-24.8, 9, -20)).then(
+createPainting(ariyike, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, screenWidth < 600 ? new THREE.Vector3(-9.8, 4.5, -15) : new THREE.Vector3(-24.8, 9, -20)).then(
   (mesh) => {
     mesh.rotation.y = Math.PI / 2;
     mesh.geometry.computeBoundingBox();
@@ -146,13 +146,13 @@ createPainting(ariyike, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, s
   }
 );
 
-createPainting(kaftans, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, screenWidth < 600 ? new THREE.Vector3(9.8, 3, 12) : new THREE.Vector3(24.8, 9, 7.5)).then((mesh) => {
+createPainting(kaftans, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, screenWidth < 600 ? new THREE.Vector3(9.8, 4.5, 12) : new THREE.Vector3(24.8, 9, 7.5)).then((mesh) => {
   mesh.rotation.y = -Math.PI / 2;
   mesh.geometry.computeBoundingBox();
   mesh.Bbox = new THREE.Box3().setFromObject(mesh);
   wallGroup.add(mesh);
 });
-createPainting(kaftans, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, screenWidth < 600 ? new THREE.Vector3(9.8, 3, 0) : new THREE.Vector3(24.8, 9, -7.5)).then(
+createPainting(kaftans, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, screenWidth < 600 ? new THREE.Vector3(9.8, 4.5, 0) : new THREE.Vector3(24.8, 9, -7.5)).then(
   (mesh) => {
     mesh.rotation.y = -Math.PI / 2;
     mesh.geometry.computeBoundingBox();
@@ -160,7 +160,7 @@ createPainting(kaftans, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, s
     wallGroup.add(mesh);
   }
 );
-createPainting(kaftans, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, screenWidth < 600 ? new THREE.Vector3(9.8, 3, -15) : new THREE.Vector3(24.8, 9, -20)).then((mesh) => {
+createPainting(kaftans, screenWidth < 600 ? 5 : 10, screenWidth < 600 ? 1 : 2, screenWidth < 600 ? new THREE.Vector3(9.8, 4.5, -15) : new THREE.Vector3(24.8, 9, -20)).then((mesh) => {
   mesh.rotation.y = -Math.PI / 2;
   mesh.geometry.computeBoundingBox();
   mesh.Bbox = new THREE.Box3().setFromObject(mesh);

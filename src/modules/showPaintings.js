@@ -106,6 +106,9 @@ const showPaintings = () => {
           if (window.innerWidth > 600){
             controls.lock();
           }
+          else{
+            document.querySelector('#navigation-section').style.display = "block"
+          }
           // camera.position.z = 18
           //* Hide Menu
           hideMenu();
@@ -136,7 +139,7 @@ const showPaintings = () => {
           menu.style.display = "block";
         };
         const playBtn = document.getElementById("enter");
-        // playBtn.addEventListener("click", startExperience, false);
+        playBtn.addEventListener("click", startExperience, false);
       });
 }
 

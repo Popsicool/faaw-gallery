@@ -115,7 +115,9 @@ main{
 	position: relative;
 	top: .2em;
 }
-
+.navigation-section{
+  display: none
+}
 @media screen and (max-width: 600px){
   .main-wrap{
     width:90%;

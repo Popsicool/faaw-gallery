@@ -146,32 +146,32 @@ const createDivider = (position, size) => {
   wallGroup.add(dividerMesh)
   return dividerMesh
 }
-createDivider({x: screenWidth < 600 ? -10 : -25, z: screenWidth < 600 ? 18: 0}, {width: 0.3, height: screenWidth < 600 ? 10 : 25})
-createDivider({x: screenWidth < 600 ? -10 : -25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 10 : 25})
-createDivider({x: screenWidth < 600 ? -10 : -25, z:screenWidth < 600 ? 5: 10}, {width: 0.3, height: screenWidth < 600 ? 10 : 25})
-createDivider({x: screenWidth < 600 ? 10 : 25, z: screenWidth < 600 ? 18: 0}, {width: 0.3, height: screenWidth < 600 ? 10 : 25})
-createDivider({x: screenWidth < 600 ? 10 : 25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 10 : 25})
-createDivider({x: screenWidth < 600 ? 10 : 25, z:screenWidth < 600 ? 5: 10}, {width: 0.3, height: screenWidth < 600 ? 10 : 25})
+createDivider({x: screenWidth < 600 ? -10 : -25, z: screenWidth < 600 ? 18: 22.5}, {width: 0.3, height: screenWidth < 600 ? 10 : 25})
+createDivider({x: screenWidth < 600 ? -10 : -25, z:screenWidth < 600 ? -10: 0}, {width: 0.3, height: screenWidth < 600 ? 10 : 25})
+createDivider({x: screenWidth < 600 ? -10 : -25, z:screenWidth < 600 ? 5: -30}, {width: 0.3, height: screenWidth < 600 ? 10 : 25})
+createDivider({x: screenWidth < 600 ? 10 : 25, z: screenWidth < 600 ? 18: 30}, {width: 0.3, height: screenWidth < 600 ? 10 : 25})
+createDivider({x: screenWidth < 600 ? 10 : 25, z:screenWidth < 600 ? -10: 0}, {width: 0.3, height: screenWidth < 600 ? 10 : 25})
+createDivider({x: screenWidth < 600 ? 10 : 25, z:screenWidth < 600 ? 5: -22.5}, {width: 0.3, height: screenWidth < 600 ? 10 : 25})
 
 //? vertical dividers
 
-const vert1 = createDivider({x: screenWidth < 600 ? 10 : 25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 40 : 90})
+const vert1 = createDivider({x: screenWidth < 600 ? 10 : 25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 70 : 120})
 vert1.rotation.x = Math.PI / 2
 vert1.position.y = 4
-const vert2 = createDivider({x: screenWidth < 600 ? 10 : 25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 40 : 90})
+const vert2 = createDivider({x: screenWidth < 600 ? 10 : 25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 70 : 120})
 vert2.rotation.x = Math.PI / 2
 vert2.position.y = 1
-const vert3 = createDivider({x: screenWidth < 600 ? 10 : 25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 40 : 90})
+const vert3 = createDivider({x: screenWidth < 600 ? 10 : 25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 70 : 120})
 vert3.rotation.x = Math.PI / 2
 vert3.position.y = -2
 
-const vert4 = createDivider({x: screenWidth < 600 ? -10 : -25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 40 : 90})
+const vert4 = createDivider({x: screenWidth < 600 ? -10 : -25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 70 : 120})
 vert4.rotation.x = Math.PI / 2
 vert4.position.y = 4
-const vert5 = createDivider({x: screenWidth < 600 ? -10 : -25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 40 : 90})
+const vert5 = createDivider({x: screenWidth < 600 ? -10 : -25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 70 : 120})
 vert5.rotation.x = Math.PI / 2
 vert5.position.y = 1
-const vert6 = createDivider({x: screenWidth < 600 ? -10 : -25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 40 : 90})
+const vert6 = createDivider({x: screenWidth < 600 ? -10 : -25, z:screenWidth < 600 ? -10: -10}, {width: 0.3, height: screenWidth < 600 ? 70 : 120})
 vert6.rotation.x = Math.PI / 2
 vert6.position.y = -2
 
